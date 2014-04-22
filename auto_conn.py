@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys, os, urllib2
+import try_auto
 from PyQt4 import QtGui, QtCore
 
 class Auto_connection(QtGui.QWidget):
@@ -43,7 +44,8 @@ class Auto_connection(QtGui.QWidget):
         self.close()
 
     def _connect(self, name, passwd):
-        pass
+        try_auto.connection(name, passwd)
+        self.close()
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     auto = Auto_connection()
